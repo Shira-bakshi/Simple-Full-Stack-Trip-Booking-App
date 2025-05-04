@@ -1,0 +1,18 @@
+<button>סנן לפי:</button>
+<select id="type" name="type" (change)="this.filterTrip($any($event.target).value)">
+    <option>הכל</option>
+    <option *ngFor=" let t of  travelT" class="opt">{{t.TypeName}}</option>
+</select>
+<div class="all">
+<div *ngFor="let t of filerLT" class="trips">
+
+    <div>  
+     <h2 >{{t.TripDestination}}</h2>
+     <p>{{t.Date}}</p>
+     <button (click)="moreD(t)">לפריטם נוספים</button>
+    </div>
+    <div>
+        <img src="../../../assets/pic/{{t.Photo}}">
+    </div>
+</div>
+</div>

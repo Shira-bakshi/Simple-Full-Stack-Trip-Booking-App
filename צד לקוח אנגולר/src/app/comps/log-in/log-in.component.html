@@ -1,0 +1,62 @@
+<div class="logIn">
+<div class="ff"><h2>הרשמה</h2></div>
+<form action class="form1" (ngSubmit)="addUser()">
+
+    <div class="form-group">
+        <label for="name" ></label >
+        <input type="text" class="form-control" id="name" name ="name" placeholder="שם:"
+        [(ngModel)]="this.users.u.Name" #inp1="ngModel" required pattern="[א-ת a-z]{1,12}">
+      </div>
+      <div *ngIf="inp1.invalid && (inp1.touched || inp1.dirty)">
+        <p *ngIf="inp1.errors!['pattern']">אפשר לכתוב באותויות קטנות או בערית!</p>
+        <p *ngIf="inp1.errors!['required']">שדה חובה</p>
+    </div>
+      <div class="form-group">
+        <label for="name" ></label >
+        <input type="text" class="form-control" id="Family" name ="Family" placeholder="משפחה:"
+        [(ngModel)]="this.users.u.Family" #inp2="ngModel" required pattern="[א-ת a-z]{1,12}">
+      </div>
+      <div *ngIf="inp2.invalid && (inp2.touched || inp2.dirty)">
+        <p *ngIf="inp2.errors!['pattern']">אפשר לכתוב באותויות קטנות או בערית!</p>
+        <p *ngIf="inp2.errors!['required']">שדה חובה</p>
+    </div>
+      <div class="form-group">
+        <label for="name" ></label >
+        <input type="tel" class="form-control" id="Phone" name ="Phone" placeholder="פאלפון:"
+        [(ngModel)]="this.users.u.Phone" #inp3="ngModel" required pattern="[0-9]{10}">
+      </div>
+      <div *ngIf="inp3.invalid && (inp3.touched || inp3.dirty)">
+        <p *ngIf="inp3.errors!['pattern']">מספרים בלבד</p>
+        <p *ngIf="inp3.errors!['required']">שדה חובה</p>
+    </div>
+     <div class="form-group">
+      <label for="name" ></label >
+      <input type="email" class="form-control" id="email" name ="email" placeholder="מייל:"
+      [(ngModel)]="this.users.u.Email" #inp4="ngModel" required pattern="[@a-z 0-9A-Z]{9}" >
+    </div>
+    <div *ngIf="inp4.invalid &&( inp4.touched || inp4.dirty)">
+        <p *ngIf="inp4.errors!['pattern']"></p>
+        <p *ngIf="inp4.errors!['required']">שדה חובה</p>
+      </div>
+    <div class="form-group">
+      <label for="pwd"></label>
+      <input type="password" class="form-control" id="LoginPassword" name="LoginPassword" placeholder="סיסמא:"
+       [(ngModel)]="this.users.u.LoginPassword" #inp5="ngModel" required minlength="8" pattern="[a-z 0-9A-Z]{9}">
+    </div>
+    <div *ngIf="inp5.invalid && (inp5.touched || inp5.dirty)">
+        <p *ngIf="inp5.errors!['minlength']">סיסמא חלשה</p>
+        <p *ngIf="inp5.errors!['required']">שדה חובה</p>
+    </div>
+    <div class="form-group">
+        <label for="name">יש לך תעודת חובש?</label >
+        <input type="checkbox" id="FirstAidCertificate" name ="FirstAidCertificate" 
+        [(ngModel)]="this.users.u.FirstAidCertificate" #inp6="ngModel" required >
+    </div>
+    <div class="submit">
+    <button type="submit" >שלח</button>
+
+</div>
+<button *ngIf="up" (click)="deletUser()" class="db">מחיקת משתמש</button>
+
+  </form>
+</div>

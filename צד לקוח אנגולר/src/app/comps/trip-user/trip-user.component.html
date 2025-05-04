@@ -1,0 +1,23 @@
+<!-- <button>סנן לפי:</button>
+<select id="type" name="type" (change)="this.filterTrip($any($event.target).value)">
+    <option>הכל</option>
+    <option *ngFor=" let t of listTrip">{{t.TypeName}}</option>
+</select> -->
+<select id="date" name="date" (change)="this.filterDate($any($event.target).value)">
+    <option>עבר</option>
+    <option>עתיד</option>
+</select>
+
+<div class="all">
+<div *ngFor="let p of FLbp" class="trips">
+    <div >  
+        <!-- style="background-image: url(../../../assets/pic/{{p.Photo}});" -->
+     <h2>{{p.TripDestination}}</h2>
+     <p>{{p.Date}}</p>
+
+     <p>{{p.TripDurationHours}}</p>
+     <!-- <button  (click)="deletBp(t.)" >מחיקת הזמנה </button> -->
+     <!-- *ngIf="t.BookingDate!>this.d" -->
+    </div>
+</div>
+</div>

@@ -1,0 +1,27 @@
+.l2{
+  
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; 
+  width: 450px;
+    height: 320px;
+}
+.lll{
+     /* flex: auto; */
+    /* margin: 30px; */
+    height: auto;
+    margin: 40px auto ;
+    text-align:center;
+    line-height:25px;
+    width: 450px;
+    height: 320px;
+     /* justify-content:space-around; */
+      background-color: #ffffff6c;
+
+    border-radius: 12px;
+    border: 2px solid #ffffff;
+    
+}
+.close{
+  direction: ltr;
+}

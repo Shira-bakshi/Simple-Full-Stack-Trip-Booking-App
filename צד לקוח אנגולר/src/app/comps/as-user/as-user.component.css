@@ -1,0 +1,21 @@
+.all{
+    display: flex;
+    /* flex: auto; */
+    margin: 30px;
+    height: auto;
+   flex-wrap:wrap;
+    flex-direction: row;
+    text-align:center;
+     /* line-height:200px; */
+}
+.dit{
+    width: 240px;
+    height: 210px;
+ 
+    margin: 30px;
+    border: 2px solid #ffffff;
+    background-color: #ffffff6c;
+
+    border-radius: 12px;
+    border: 2px solid #ffffff;
+}

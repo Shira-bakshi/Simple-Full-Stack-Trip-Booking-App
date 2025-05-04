@@ -1,0 +1,45 @@
+
+
+<div  >
+
+  <p *ngIf="!user.u.UserCode && !user.manage">שלום אורח</p>
+  <p *ngIf="user.u.UserCode && !user.manage">שלום {{user.u.Name}}</p>
+  <p *ngIf="user.manage">מצב מנהל</p>
+</div>
+<div class="mm">
+<div class="nav"> 
+  <ul class="nav nav-tabs" >
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" routerLink="./about">אודות</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" routerLink="./signIn">כניסה</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" routerLink="./logIn">הרשמה</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" routerLink="./ourTrip">לטיולים שלנו...</a>
+      </li>
+      <li class="nav-item" *ngIf="user.u.UserCode && user.manage==false">
+          <a class="nav-link" data-bs-toggle="tab" routerLink="./tripUser">ההזמנות שלי</a>
+      </li>
+      <li class="nav-item" *ngIf="user.u.UserCode && user.manage==false">
+        <a class="nav-link" data-bs-toggle="tab" routerLink="./updateD">פרטים </a>
+    </li>
+      <li class="nav-item" *ngIf="user.manage">
+        <a class="nav-link" data-bs-toggle="tab" routerLink="./usUser">המשתמשים שלנו</a>
+    </li>    
+    </ul>
+  </div>
+  <div>
+    <img  src="../../../assets/pic/logo1.png">
+  </div>
+</div>
+    <router-outlet></router-outlet>
+
+     <div class="tab-content">
+      <div class="tab-pane container active" id="home">...</div>
+      <div class="tab-pane container fade" id="menu1">...</div>
+      <div class="tab-pane container fade" id="menu2">...</div>
+    </div>
